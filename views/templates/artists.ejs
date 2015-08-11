@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><link rel="icon" href="data:;base64,iVBORw0KGgo=">
   <meta charset="UTF-8">
   <title><%= title %> | artists</title>
 </head>
 <body>
  <h1>Artists</h1>
+ <a href="/artists/addartist">Add new artist</a>
   <table>
   <tbody><% artists.forEach(function (artist){ %>
      <tr>
       <td><%= artist.name %></td>
-      <td><%= artist.style %></td>
+      <td><%= artist.genre %></td>
       <td><%= artist.language %></td>
       <td><%= artist.nationality %></td>
       <td><%= artist.bio %></td>

@@ -1,16 +1,17 @@
 var express = require('express');
 var router = express.Router();
+var ObjectID = require('mongodb').ObjectID;
 
 router.get('/', function (req, res) {
   var collection = global.db.collection('findArtist');
   collection.find().toArray(function (err, artists) {
     var formattedArtists = artists.map(function (artist) {
       //take an order and return an obect we want it to be
-      console.log(artist)
+      console.log("this is the artist stuff", artist);
       return {
         _id: artist._id,
         name: artist.name,
-        genre: artist.style,
+        genre: artist.genre,
         bio: artist.bio,
         language: artist.language,
         nationality: artist.nationality,
@@ -18,11 +19,13 @@ router.get('/', function (req, res) {
         wiki: artist.wiki
       };
     });
-    res.render('templates/artists', {artists : formattedArtists});
+    res.render('templates/artists', {
+      artists: formattedArtists
+    });
   });
 });
 
-router.get('/addartist', function (req, res) {
+router.get('/artists/addartist', function (req, res) {
   res.render('templates/addartist');
 });
 router.post('/artists/addartist', function (req, res) {
@@ -30,7 +33,6 @@ router.post('/artists/addartist', function (req, res) {
   collection.save(req.body, function () {
     res.redirect('/artists')
   });
-
 });
 router.post('/artists/:id/complete', function (req, res) {
   var collection = global.db.collection('artists');

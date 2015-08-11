@@ -2,6 +2,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 //route requires
+var home = require('./routes/index');
 var artists = require('./routes/artists');
 var albums = require('./routes/albums');
 var songs = require('./routes/songs');
@@ -32,7 +33,8 @@ app.use(bodyParser.urlencoded({ //parses form data
 
 //routes --  one way to do this
 //require('./routes/index');
-app.use('/', artists);
+app.use('/', index);
+app.use('/artists', artists);
 app.use('/albums', albums);
 app.use('/songs', songs);
 

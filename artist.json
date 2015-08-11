@@ -1,0 +1,31 @@
+  {
+    "0": {
+      "name": "U2",
+      "genre": "rock",
+      "bio": "Iconic Irish rock band",
+      "language": "English",
+      "nationality": "Irish",
+      "members": {
+        "vocals": "Bono",
+        "guitar": "The Edge",
+        "bass": "Adam Clayton",
+        "drums": "Larry Mullen, Jr."
+      },
+      "wiki": "https://en.wikipedia.org/wiki/U2"
+    },
+      "1": {
+
+        "name": "R.E.M",
+        "genre": "Alt rock",
+        "bio": "Awesome Athens, Ga. band",
+        "language": "English",
+        "nationality": "American",
+        "members": {
+          "vocals": "Michael Stipe",
+          "guitar": "Peter Buck",
+          "bass": "Mike Mills",
+          "drums": "Bill Berry, Jr."
+        },
+        "wiki": "https://en.wikipedia.org/wiki/R.E.M."
+      }
+    }
