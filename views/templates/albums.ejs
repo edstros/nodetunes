@@ -6,5 +6,17 @@
 </head>
 <body>
   <h1>Albums</h1>
+   <a href="/artists/addalbum">Add new album</a>
+  <table>
+  <tbody><% albums.forEach(function (artist){ %>
+     <tr>
+      <td><%= albums.name %></td>
+      <td><%= albums.artistID %></td>
+      <td><%= albums.Year %></td>
+
+    </tr>
+      <% }); %>
+  </tbody>
+  </table>
 </body>
 </html>

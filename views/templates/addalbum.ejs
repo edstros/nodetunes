@@ -2,14 +2,14 @@
 <html lang="en">
 <head><link rel="icon" href="data:;base64,iVBORw0KGgo=">
   <meta charset="UTF-8">
-  <title><%= title %> | add artists</title>
+  <title><%= title %> | add albums</title>
 </head>
 
 <body>
-  <h1>Add an artist</h1>
-  <a href="/">Cancel</a>
-  <form action="/artists/addartist" method="POST">
-    <input type="text" placeholder="Name" name="artistName">
+  <h1>Add an album</h1>
+  <a href="/albums">Cancel</a>
+  <form action="/albums/addalbums" method="POST">
+    <input type="text" placeholder="Name" name="albumName">
     <label>Genre:</label>
     <select name="genre">
       <option value="alt">Alt Rock</option>
@@ -19,10 +19,8 @@
       <option value="rock">Rock</option>
       <option value="singer">Singer/Songwriter</option>
     </select>
-    <label>Language:</label>
-    <input type="text" name="language">
-        <label>Nationality:</label>
-    <input type="text" name="nationality">
+    <label>Year:</label>
+    <input type="text" name="year">
     <label>Bio:</label>
     <input type="text" placeholder="Enter bio information" name="bio">
     <label>Members:</label>
