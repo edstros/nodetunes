@@ -3,7 +3,7 @@ var router = express.Router();
 var ObjectID = require('mongodb').ObjectID;
 
 router.get('/', function (req, res) {
-  var collection = global.db.collection('findArtist');
+  var collection = global.db.collection('artists');
   collection.find().toArray(function (err, artists) {
     var formattedArtists = artists.map(function (artist) {
       //take an order and return an obect we want it to be
@@ -19,6 +19,7 @@ router.get('/', function (req, res) {
         wiki: artist.wiki
       };
     });
+    console.log(formattedArtists)
     res.render('templates/artists', {
       artists: formattedArtists
     });
@@ -26,12 +27,13 @@ router.get('/', function (req, res) {
 });
 
 router.get('/artists/addartist', function (req, res) {
+  console.log('res', res);
   res.render('templates/addartist');
 });
 router.post('/artists/addartist', function (req, res) {
   var collection = global.db.collection('artists');
   collection.save(req.body, function () {
-    res.redirect('/artists')
+    res.redirect('/');
   });
 });
 router.post('/artists/:id/complete', function (req, res) {
