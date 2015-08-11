@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Add Artist</title>
+  <title><%= title %> | add artists</title>
 </head>
 
 <body>
   <h1>Add an artist</h1>
-  <a href="/artists/addartist">Cancel</a>
+  <a href="/artists">Cancel</a>
   <form action="/artists/addartist" method="POST">
     <input type="text" placeholder="Name" name="artistName">
     <label>Genre:</label>

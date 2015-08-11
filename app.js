@@ -26,10 +26,9 @@ app.locals.title = 'NodeTunes';
 
 
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({
+app.use(bodyParser.urlencoded({ //parses form data
   extended: false
 }))
-
 
 //routes --  one way to do this
 //require('./routes/index');
