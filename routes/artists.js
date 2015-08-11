@@ -5,18 +5,21 @@ router.get('/', function (req, res) {
   var collection = global.db.collection('findArtist');
   collection.find().toArray(function (err, orders) {
 
-    var formattedOrders = orders.map(function (order) {
+    var formattedArtists = orders.map(function (artist) {
       //take an order and return an obect we want it to be
       console.log(complete)
       return {
-        _id: order._id,
-        name: order.Nuggets_for,
-        flavor: order.style,
-        qty: order.qty,
-        createdAt: moment(order._id.getTimestamp()).fromNow(),
+        _id: artist._id,
+        name: artist.name,
+        genre: artist.style,
+        bio: artist.bio,
+        language: artist.language,
+        nationality: artist.nationality,
+        members: artist.members,
+        wiki: artist.wiki
       };
     });
-    res.render('templates/artists');
+    res.render('templates/addartist');
   });
 });
 
