@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Artist</title>
+</head>
+
+<body>
+  <h1>Add an artist</h1>
+  <a href="/artists/addartist">Cancel</a>
+  <form action="/artists/addartist" method="POST">
+    <input type="text" placeholder="Name" name="artistName">
+    <label>Genre:</label>
+    <select name="genre">
+      <option value="alt">Alt Rock</option>
+      <option value="blues">Blues</option>
+      <option value="country">Country</option>
+      <option value="pop">Pop</option>
+      <option value="rock">Rock</option>
+      <option value="singer">Singer/Songwriter</option>
+    </select>
+    <label>Language:</label>
+    <input type="text" name="language">
+    <label>Bio:</label>
+    <input type="text" placeholder="Enter bio information" name="bio">
+    <label>Members:</label>
+    <input type="text" placeholder="names of performers" name="members">
+    <label>Wikipedia link:</label>
+    <input type="text" name="wiki">
+    <input type="submit" value="Add this artist">
+  </form>
+</body>
+</html>
