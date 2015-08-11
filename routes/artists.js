@@ -10,7 +10,7 @@ router.get('/', function (req, res) {
       console.log("this is the artist stuff", artist);
       return {
         _id: artist._id,
-        name: artist.name,
+        name: artist.artistName,
         genre: artist.genre,
         bio: artist.bio,
         language: artist.language,

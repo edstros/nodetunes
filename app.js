@@ -35,6 +35,7 @@ app.use(bodyParser.urlencoded({ //parses form data
 //require('./routes/index');
 
 app.use('/', artists);
+app.use('/artists', artists);
 app.use('/albums', albums);
 app.use('/songs', songs);
 
