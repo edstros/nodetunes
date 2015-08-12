@@ -1,8 +1,8 @@
 //npm requires
 var express = require('express');
 var bodyParser = require('body-parser');
-//route requires
 
+//route requires
 var artists = require('./routes/artists');
 var albums = require('./routes/albums');
 var songs = require('./routes/songs');

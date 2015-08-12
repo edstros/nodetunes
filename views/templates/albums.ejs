@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+<head>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
   <meta charset="UTF-8">
-  <title><%= title %> | albums</title>
+  <title>
+    <%= title %> | albums</title>
 </head>
 <body>
   <h1>Albums</h1>
-   <a href="/artists/addalbum">Add new album</a>
+  <a href="/albums/addalbum">Add new album</a>
   <table>
-  <tbody><% albums.forEach(function (artist){ %>
-     <tr>
-      <td><%= albums.name %></td>
-      <td><%= albums.artistID %></td>
-      <td><%= albums.Year %></td>
-
-    </tr>
-      <% }); %>
-  </tbody>
+    <tbody>
+      <% albums.forEach(function (album){ %>
+        <tr>
+          <td><%= album.name %></td>
+          <td><%= album.artistID %></td>
+          <td><%= album.year %></td>
+          <td>
+          <form action="/delete/<%= album._id %>" method="POST">
+           <input type="submit" value="Delete">
+            </form>
+          </td>
+        </tr>
+        <% }); %>
+    </tbody>
   </table>
 </body>
+
 </html>

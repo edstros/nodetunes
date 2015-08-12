@@ -3,9 +3,6 @@ var router = express.Router();
 var ObjectId = require('mongodb').ObjectID;
 
 
-
-
-
 router.get('/', function (req, res) {
   var collection = global.db.collection('artists');
   collection.find().toArray(function (err, artists) {
