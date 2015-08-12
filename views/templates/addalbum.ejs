@@ -9,25 +9,11 @@
   <h1>Add an album</h1>
   <a href="/albums">Cancel</a>
   <form action="/albums/addalbums" method="POST">
-    <input type="text" placeholder="Name" name="albumName">
-    <label>Genre:</label>
-    <select name="genre">
-      <option value="alt">Alt Rock</option>
-      <option value="blues">Blues</option>
-      <option value="country">Country</option>
-      <option value="pop">Pop</option>
-      <option value="rock">Rock</option>
-      <option value="singer">Singer/Songwriter</option>
-    </select>
+    <input type="text" placeholder="Album Name" name="albumName">
     <label>Year:</label>
     <input type="text" name="year">
-    <label>Bio:</label>
-    <input type="text" placeholder="Enter bio information" name="bio">
-    <label>Members:</label>
-    <input type="text" placeholder="names of performers" name="members">
-    <label>Wikipedia link:</label>
-    <input type="text" name="wiki">
-    <input type="submit" value="Add this artist">
+
+    <input type="submit" value="Search">
   </form>
 </body>
 </html>

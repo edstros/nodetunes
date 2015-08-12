@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
   collection.find().toArray(function (err, albums) {
     var formattedAlbums = albums.map(function (album) {
       //take an order and return an obect we want it to be
-      console.log("this is the artist stuff", album);
+      console.log("this is the album stuff", album);
       return {
         _id: album._id,
         name: album.albumName,

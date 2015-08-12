@@ -10,7 +10,6 @@ var songs = require('./routes/songs');
 //variables
 var app = express(); //this was before the app.get files were moved to index.js
 
-
 /*
 if (process.env.NODE_ENV !== 'production') {
   require('./lib/secrets');
