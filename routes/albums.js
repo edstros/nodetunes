@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var ObjectID = require('mongodb').ObjectID;
 
+
 router.get('/', function (req, res) {
   var collection = global.db.collection('albums');
   collection.find().toArray(function (err, albums) {
@@ -10,6 +11,7 @@ router.get('/', function (req, res) {
       console.log("this is the album stuff", album);
       return {
         _id: album._id,
+        artist: album.artistName,
         name: album.albumName,
         year: album.year
       };
@@ -20,6 +22,7 @@ router.get('/', function (req, res) {
     });
   });
 });
+
 router.get('/addalbum', function (req, res) {
   res.render('templates/addalbum');
 });
@@ -38,4 +41,16 @@ router.post('/delete/:id', function (req, res) {
     });
 });
 
+router.get('/search/:artistName', function (req, res) {
+ //console.log(req.params.artistName);
+  var collection = global.db.collection('albums');
+  collection.find({
+    artistName: (req.params.artistName),
+    _id: ObjectId(req.params.id)
+
+  }, function () {
+    $('target').append($('<div><p>' + res.artistName + '</p></div>'))
+    res.redirect('/')
+  });
+});
 module.exports = router;

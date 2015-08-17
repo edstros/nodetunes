@@ -1,8 +1,10 @@
 //npm requires
 var express = require('express');
 var bodyParser = require('body-parser');
+var lessCSS = require('less-middleware');
 
 //route requires
+var routes = require('./routes/index');
 var artists = require('./routes/artists');
 var albums = require('./routes/albums');
 var songs = require('./routes/songs');
@@ -33,10 +35,12 @@ app.use(bodyParser.urlencoded({ //parses form data
 //routes --  one way to do this
 //require('./routes/index');
 
-app.use('/', artists);
+app.use('/', routes);
 app.use('/artists', artists);
 app.use('/albums', albums);
 app.use('/songs', songs);
+app.use(express.static('www'));
+app.use(lessCSS('www'));
 
 app.use(function (req, res) {
   res.status(403); //400s before the 500s

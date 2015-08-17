@@ -8,7 +8,7 @@ router.get('/', function (req, res) {
   collection.find().toArray(function (err, artists) {
     var formattedArtists = artists.map(function (artist) {
       //take an order and return an obect we want it to be
-      //console.log("this is the artist stuff", artist);
+     console.log("this is the artist stuff", artists);
       return {
         _id: artist._id,
         name: artist.artistName,

@@ -6,14 +6,12 @@
 </head>
 
 <body>
-  <h1>Add an album</h1>
+  <h1>Add new album</h1>
   <a href="/albums">Cancel</a>
-  <form action="/albums/addalbums" method="POST">
-    <input type="text" placeholder="Album Name">
-    <label>Year:</label>
-    <input type="text" name="year">
-
+  <form action="/artists/search" method="GET">
+    <input type="text" name="name" placeholder="Enter Artist Name">
     <input type="submit" value="Search">
   </form>
+<div id="artistResults"></div>
 </body>
 </html>

@@ -11,11 +11,16 @@
   <h1>Albums</h1>
   <a href="/albums/addalbum">Add new album</a>
   <table>
-    <tbody>
+   <thead><tr>
+     <td>Album Name </td>
+     <td>Artist Name</td>
+     <td>Year Released</td>
+     <td>Action</td>
+   </tr> <tbody>
       <% albums.forEach(function (album){ %>
         <tr>
           <td><%= album.name %></td>
-          <td><%= album.artistID %></td>
+          <td><%= album.artist %></td>
           <td><%= album.year %></td>
           <td>
           <form action="/delete/<%= album._id %>" method="POST">
@@ -24,8 +29,9 @@
           </td>
         </tr>
         <% }); %>
-    </tbody>
+    </tbody></thead>
   </table>
+
 </body>
 
 </html>
